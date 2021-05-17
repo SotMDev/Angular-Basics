@@ -1,6 +1,10 @@
-# ScorpApp
+# Angular Basics
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+
+## Installation
+
+Run `npm install` command when you clone repository on directory. When installation is over, run `npm start` command. Navigate to `http://localhost:4200/`.
 
 ## Development server
 
