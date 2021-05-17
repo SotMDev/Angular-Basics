@@ -5,6 +5,9 @@
                 <div class="home" [routerLink]="['index']">
                     <i class="fas fa-home"></i>
                     <h1>{{ 'navigation.' + currentPage | translate }}</h1>
+                    <ng-container *ngIf="currentPage === 'index'">
+                        <span>Scorp</span>
+                    </ng-container>
                 </div>
             </div>
             <div class="col-auto d-block d-md-none">

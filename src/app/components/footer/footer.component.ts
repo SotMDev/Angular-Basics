@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BaseComponent} from '../base/base.component';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'app-footer',
@@ -12,9 +13,10 @@ export class FooterComponent extends BaseComponent implements OnInit {
 
     constructor(
         public router: Router,
-        public translateService: TranslateService
+        public translateService: TranslateService,
+        public http: HttpClient
     ) {
-        super(router, translateService);
+        super(router, http, translateService);
     }
 
     ngOnInit(): void {

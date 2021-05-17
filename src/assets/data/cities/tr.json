@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Londra",
+        "description": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.",
+        "image": "https://images4.alphacoders.com/795/795081.jpg",
+        "population": "111111"
+    },
+    {
+        "name": "Istanbul",
+        "description": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.",
+        "image": "https://i.pinimg.com/originals/a7/67/ca/a767ca0dfcbcb5f1f207e6f139813502.jpg",
+        "population": "222222"
+    },
+    {
+        "name": "Paris",
+        "description": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.",
+        "image": "https://wallpaperaccess.com/full/203323.jpg",
+        "population": "333333"
+    },
+    {
+        "name": "Barcelona",
+        "description": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.",
+        "image": "https://wallpaper.dog/large/20367363.jpg",
+        "population": "444444"
+    },
+    {
+        "name": "Roma",
+        "description": "Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır.",
+        "image": "https://i.pinimg.com/originals/0a/fb/92/0afb9275cfb375b34fe8e18f18e0880f.jpg",
+        "population": "555555"
+    }
+]

@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {BaseComponent} from '../base/base.component';
 import {BsModalService} from 'ngx-bootstrap/modal';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'app-header',
@@ -16,29 +17,23 @@ export class HeaderComponent extends BaseComponent implements OnInit {
     constructor(
         public router: Router,
         public translateService: TranslateService,
-        private modalService: BsModalService
+        private modalService: BsModalService,
+        public http: HttpClient
     ) {
-        super(router, translateService);
+        super(router, http, translateService);
     }
 
     ngOnInit(): void {
-        this.currentLanguage = localStorage.getItem('lang');
     }
 
     openModal(template: TemplateRef<any>) {
         this.modalRef = this.modalService.show(template);
     }
 
-    changeLanguage(event: any): void {
-        this.currentLanguage = event.value;
-        localStorage.setItem('lang', this.currentLanguage);
-        this.translateService.use(localStorage.getItem('lang') || '');
-        this.translateService.setDefaultLang(localStorage.getItem('lang') || '');
-    }
-
     loginButton() {
         if (this.userSubmitInfo.email === this.userInfo.email && this.userSubmitInfo.password === this.userInfo.password) {
             this.isLoggedIn = true;
+            localStorage.setItem('userInfo', JSON.stringify(this.userInfo));
             this.modalRef.hide();
             this.userSubmitInfo = {
                 email: '',
@@ -53,14 +48,6 @@ export class HeaderComponent extends BaseComponent implements OnInit {
     logoutButton() {
         this.isLoggedIn = false;
         this.modalRef.hide();
-    }
-
-    toggleMobileMenu() {
-        if (document.body.classList.contains('mobile-active')) {
-            document.body.classList.remove('mobile-active');
-        } else {
-            document.body.classList.add('mobile-active');
-        }
     }
 
 }
