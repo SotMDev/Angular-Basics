@@ -20,17 +20,16 @@ export class IndexComponent extends BaseComponent implements OnInit, DoCheck {
     }
 
     ngOnInit(): void {
-        this.set();
+        this.setCitiesData();
     }
 
     ngDoCheck() {
         if (this.currentLanguage !== localStorage.getItem('lang')) {
-            this.set();
+            this.setCitiesData();
         }
     }
 
-
-    set() {
+    setCitiesData() {
         this.currentLanguage = localStorage.getItem('lang');
         this.getCities();
     }
