@@ -1,0 +1,9 @@
+<footer>
+    <div class="footer-links">
+        <ul>
+            <li *ngFor="let page of pages">
+                <a href="javascript:void(0)" [routerLink]="page.url">{{ (page.name) | translate }}</a>
+            </li>
+        </ul>
+    </div>
+</footer>

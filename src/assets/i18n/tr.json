@@ -1,0 +1,52 @@
+{
+    "languages": {
+        "tr": "Türkçe",
+        "en": "İngilizce"
+    },
+    "navigation": {
+        "index": "Anasayfa",
+        "contact-us": "Bize Ulaşın"
+    },
+    "population": "Nüfus",
+    "contact-us": {
+        "name": {
+            "label": "İsim",
+            "validation": "İsim alanı zorunludur."
+        },
+        "email": {
+            "label": "E-Posta",
+            "validation": "E-Posta alanı zorunludur. E-posta formatında yazınız. Örn: info@example.com"
+        },
+        "phone-number": {
+            "label": "Telefon",
+            "validation": "Telefon alanı zorunludur."
+        },
+        "country-code": {
+            "label": "Ülke"
+        },
+        "text": {
+            "label": "Mesaj",
+            "validation": "Mesaj alanı zorunludur."
+        }
+    },
+    "country": {
+        "tr": "Türkiye",
+        "us": "Amerika Birleşik Devletleri",
+        "gb": "Büyük Britanya",
+        "de": "Almanya",
+        "se": "İsveç",
+        "ke": "Kenya",
+        "br": "Brezilya",
+        "zw": "Zimbabve"
+    },
+    "user": {
+        "login": "Giriş Yap",
+        "logout": "Çıkış Yap",
+        "my-account": "Hesabım",
+        "name": "Kullanıcı Adı",
+        "email": "E-Posta",
+        "password": "Şifre",
+        "error": "Kullanıcı adı ya da Şifre yanlış!"
+    },
+    "submit": "Gönder"
+}

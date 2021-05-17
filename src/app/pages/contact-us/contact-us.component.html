@@ -1,0 +1,87 @@
+<div class="container">
+    <form [formGroup]="contactForm">
+        <div class="row">
+            <div class="col-12">
+                <div class="line-lg">
+                    <h1>{{ 'navigation.contact-us' | translate }}</h1>
+                </div>
+                <div class="line-lg">
+                    <div class="form-group">
+                        <label>{{ 'contact-us.name.label' | translate }}</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            formControlName="name"
+                        >
+                        <p class="validation-error" *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched">{{ 'contact-us.name.validation' | translate }}</p>
+                    </div>
+                </div>
+                <div class="line-lg">
+                    <div class="form-group">
+                        <label>{{ 'contact-us.email.label' | translate }}</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            formControlName="email">
+                        <p class="validation-error" *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched">{{ 'contact-us.email.validation' | translate }}</p>
+                    </div>
+                </div>
+                <div class="line-lg">
+                    <div class="form-group">
+                        <label>{{ 'contact-us.phone-number.label' | translate }}</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="phone"
+                            mask="99999999999"
+                            formControlName="phoneNumber">
+                        <p class="validation-error" *ngIf="contactForm.controls['phoneNumber'].invalid && contactForm.controls['phoneNumber'].touched">{{ 'contact-us.phone-number.validation' | translate }}</p>
+                    </div>
+                </div>
+                <div class="line-lg">
+                    <div class="form-group">
+                        <label>{{ 'contact-us.country-code.label' | translate }}</label>
+                        <ng-select [items]="[
+                                        {id: 'TR', name: this.translateService.instant('country.tr')},
+                                        {id: 'US', name: this.translateService.instant('country.us')},
+                                        {id: 'GB', name: this.translateService.instant('country.gb')},
+                                        {id: 'DE', name: this.translateService.instant('country.de')},
+                                        {id: 'SE', name: this.translateService.instant('country.se')},
+                                        {id: 'KE', name: this.translateService.instant('country.ke')},
+                                        {id: 'BR', name: this.translateService.instant('country.br')},
+                                        {id: 'ZW', name: this.translateService.instant('country.zw')}
+                                    ]"
+                                   class="w-100"
+                                   bindLabel="name"
+                                   bindValue="id"
+                                   [clearable]="false"
+                                   [searchable]="true"
+                                   [multiple]="false"
+                                   formControlName="countryCode"
+                                   placeholder="Lütfen ülke seçiniz.">
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="line-lg">
+                    <div class="form-group">
+                        <label>{{ 'contact-us.text.label' | translate }}</label>
+                        <textarea
+                            class="form-control"
+                            name="text"
+                            id="text"
+                            cols="30"
+                            rows="15"
+                            formControlName="text"
+                        ></textarea>
+                        <p class="validation-error" *ngIf="contactForm.controls['text'].invalid && contactForm.controls['text'].touched">{{ 'contact-us.text.validation' | translate }}</p>
+                    </div>
+                </div>
+                <div class="line-lg d-flex justify-content-end">
+                    <button type="button" class="btn btn-lg btn-success" (click)="submitContactForm()" [disabled]="!enableSubmitButton">{{ 'submit' | translate }}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

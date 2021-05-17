@@ -1,0 +1,81 @@
+@import "variables";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-family;
+    font-size: 1.4rem;
+    color: $text-color;
+    background: #fff;
+    min-height: 100vh;
+    display: block;
+    position: relative;
+    overflow-y: scroll;
+    transition: left 0.2s ease-in-out,right 0.2s ease-in-out;
+    left: 0;
+    &.mobile-active {
+        left: 280px;
+        overflow: hidden;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+}
+
+ng-select {
+    outline: none;
+    width: 10rem;
+    * {
+        font-weight: 400!important;
+    }
+    &:focus,
+    &:hover {
+        outline: none;
+    }
+}
+
+.main-content {
+    min-height: 100%;
+}
+
+.line-lg {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    input {
+        height: 3.6rem;
+        line-height: 3.6rem;
+    }
+    ng-select {
+        .ng-value {
+            padding-top: .4rem;
+            span {
+                line-height: 3.6rem;
+            }
+        }
+    }
+}
+
+.validation-error {
+    color: $alert-color;
+}
+
+input {
+    &.ng-invalid {
+        border: 1px solid $alert-color;
+    }
+    &.ng-valid {
+        border: 1px solid $success-color;
+    }
+    &.ng-untouched {
+        border: 1px solid #ced4da;
+    }
+}

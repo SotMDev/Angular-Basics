@@ -1,0 +1,12 @@
+$gutter: 15px;
+$font-family: 'Montserrat', sans-serif;
+$text-color: #4e4e4e;
+$alert-color: #d50000;
+$success-color: #47ff33;
+
+@mixin center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

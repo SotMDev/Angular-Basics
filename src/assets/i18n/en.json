@@ -1,0 +1,52 @@
+{
+    "languages": {
+        "tr": "Turkish",
+        "en": "English"
+    },
+    "navigation": {
+        "index": "Homepage",
+        "contact-us": "Contact Us"
+    },
+    "population": "Population",
+    "contact-us": {
+        "name": {
+            "label": "Name",
+            "validation": "Name is required."
+        },
+        "email": {
+            "label": "E-Mail",
+            "validation": "E-mail is required. Please type to e-mail format. Example: info@example.com"
+        },
+        "phone-number": {
+            "label": "Phone",
+            "validation": "Phone is required."
+        },
+        "country-code": {
+            "label": "Country"
+        },
+        "text": {
+            "label": "Message",
+            "validation": "Message is required."
+        }
+    },
+    "country": {
+        "tr": "Turkey",
+        "us": "United States of America",
+        "gb": "United Kingdom",
+        "de": "Germany",
+        "se": "Sweden",
+        "ke": "Kenya",
+        "br": "Brazil",
+        "zw": "Zimbabwe"
+    },
+    "user": {
+        "login": "Login",
+        "logout": "Logout",
+        "my-account": "My Account",
+        "name": "Username",
+        "email": "E-Mail",
+        "password": "Password",
+        "error": "Username or password invalid!"
+    },
+    "submit": "Submit"
+}

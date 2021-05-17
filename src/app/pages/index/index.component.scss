@@ -1,0 +1,44 @@
+@import "src/assets/scss/variables";
+
+.city {
+    margin-bottom: $gutter*2;
+    &-image {
+        position: relative;
+        padding-top: 9px / 16px * 100%;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            border: none;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    &-content {
+        padding: 0 $gutter;
+        &-name {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        &-population {
+            font-size: 1.6rem;
+            color: #558899;
+            font-weight: 500;
+        }
+        &-description {
+            padding-top: $gutter;
+            font-size: 1.4rem;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        &-content {
+            padding: $gutter 0;
+        }
+    }
+}

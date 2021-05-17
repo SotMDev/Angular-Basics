@@ -1,0 +1,136 @@
+<header>
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-auto">
+                <div class="home" [routerLink]="['index']">
+                    <i class="fas fa-home"></i>
+                    <h1>{{ 'navigation.' + currentPage | translate }}</h1>
+                </div>
+            </div>
+            <div class="col-auto d-block d-md-none">
+                <div class="mobile-nav" (click)="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div class="col-auto d-none d-md-block">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <nav class="nav">
+                            <ul>
+                                <li *ngFor="let page of pages">
+                                    <a href="javascript:void(0);" [routerLink]="page.url">{{ (page.name) | translate }}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-auto">
+                        <ng-select [items]="languages"
+                                   bindLabel="name"
+                                   bindValue="value"
+                                   [clearable]="false"
+                                   [searchable]="false"
+                                   (change)="changeLanguage($event)"
+                                   [(ngModel)]="currentLanguage">
+                        </ng-select>
+                    </div>
+                    <div class="col-auto">
+                        <div class="user-menu">
+                            <i class="fas fa-user"></i>
+                            <ng-container *ngIf="isLoggedIn">
+                                <button type="button" class="btn" (click)="openModal(myAccountTemplate)">{{ userInfo.name }}</button>
+                            </ng-container>
+                            <ng-container *ngIf="!isLoggedIn">
+                                <button type="button" class="btn" (click)="openModal(loginTemplate)">{{ 'user.login' | translate }}</button>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="mobile-navigation">
+    <a href="javascript:void(0);" (click)="toggleMobileMenu()" class="close-mobile-navigation">
+        <i class="fas fa-times"></i>
+    </a>
+    <div class="mobile-navigation">
+        <ul>
+            <li *ngFor="let page of pages">
+                <a href="javascript:void(0);" (click)="toggleMobileMenu()" [routerLink]="page.url">{{ (page.name) | translate }}</a>
+            </li>
+            <li>
+                <ng-container *ngIf="isLoggedIn">
+                    <a href="javascript:void(0);" (click)="toggleMobileMenu(); openModal(myAccountTemplate)">{{ userInfo.name }}</a>
+                </ng-container>
+                <ng-container *ngIf="!isLoggedIn">
+                    <a href="javascript:void(0);" (click)="toggleMobileMenu(); openModal(loginTemplate)">{{ 'user.login' | translate }}</a>
+                </ng-container>
+            </li>
+        </ul>
+        <div class="select-language">
+            <ng-select [items]="languages"
+                       bindLabel="name"
+                       bindValue="value"
+                       [clearable]="false"
+                       [searchable]="false"
+                       (change)="changeLanguage($event)"
+                       [(ngModel)]="currentLanguage">
+            </ng-select>
+        </div>
+    </div>
+</div>
+<div class="navigation-menu-overlay" (click)="toggleMobileMenu()"></div>
+<ng-template #myAccountTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{ 'user.my-account' | translate }}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="line-lg">
+            <p>{{ userInfo.name }}</p>
+            <p>{{ userInfo.email }}</p>
+            <p>{{ userInfo.id }}</p>
+        </div>
+        <div class="line-lg">
+            <div class="form-group">
+                <button (click)="logoutButton();">{{ 'user.logout' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #loginTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{ 'user.login' | translate }}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="line-lg">
+            <div class="form-group">
+                <label>{{ 'user.name' | translate }}</label>
+                <input type="text" class="form-control" [(ngModel)]="userSubmitInfo.email" [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <div class="line-lg">
+            <div class="form-group">
+                <label>{{ 'user.password' | translate }}</label>
+                <input type="password" class="form-control" [(ngModel)]="userSubmitInfo.password" [ngModelOptions]="{standalone: true}">
+            </div>
+        </div>
+        <div class="line-lg">
+            <p>
+                <ng-container *ngIf="wrongUserInfo">
+                    {{ 'user.error' | translate }}
+                </ng-container>
+            </p>
+        </div>
+        <div class="line-lg d-flex justify-content-end">
+            <div class="form-group">
+                <button type="button" class="btn btn-lg btn-success" (click)="loginButton()" [disabled]="userSubmitInfo.password === '' || userSubmitInfo.email === ''">{{ 'user.login' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

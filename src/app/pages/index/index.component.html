@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="city-wrapper">
+        <div class="city" *ngFor="let city of cities">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="city-image">
+                        <img [src]="city.image" [alt]="city.name">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="city-content">
+                        <div class="city-content-name">
+                            {{ city.name }}
+                        </div>
+                        <div class="city-content-population">
+                            {{ 'population' | translate }} {{ (city.population | number)?.replace(',','.') }}
+                        </div>
+                        <div class="city-content-description">
+                            {{ city.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
